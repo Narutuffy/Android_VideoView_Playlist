@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -16,6 +17,13 @@ public class MainActivity extends Activity {
 
     VideoView videoView;
     int i=0;
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        finish();
+        return super.dispatchTouchEvent(ev);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +56,8 @@ public class MainActivity extends Activity {
 
             }
         });
+
+
 
     }
 
